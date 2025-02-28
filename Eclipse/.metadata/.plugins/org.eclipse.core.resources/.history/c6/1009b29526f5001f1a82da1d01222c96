@@ -1,0 +1,40 @@
+package com.webmvc.users;
+
+public class LHLDanhMuc {
+	private int lhl_madm;
+	private String lhl_tendm;
+	private String lhl_mota;
+	
+	
+	public LHLDanhMuc(int lhl_madm, String lhl_tendm, String lhl_mota) {
+		super();
+		this.lhl_madm = lhl_madm;
+		this.lhl_tendm = lhl_tendm;
+		this.lhl_mota = lhl_mota;
+	}
+	
+	public LHLDanhMuc() {
+		super();
+	}
+
+	public int getLhl_madm() {
+		return lhl_madm;
+	}
+	public void setLhl_madm(int lhl_madm) {
+		this.lhl_madm = lhl_madm;
+	}
+	public String getLhl_tendm() {
+		return lhl_tendm;
+	}
+	public void setLhl_tendm(String lhl_tendm) {
+		this.lhl_tendm = lhl_tendm;
+	}
+	public String getLhl_mota() {
+		return lhl_mota;
+	}
+	public void setLhl_mota(String lhl_mota) {
+		this.lhl_mota = lhl_mota;
+	}
+	
+	
+}

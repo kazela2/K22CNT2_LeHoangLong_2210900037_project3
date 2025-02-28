@@ -1,0 +1,26 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Xin Chao Nguoi Anh Em</h1>
+    </div>
+    <div class="content">
+        <% 
+            // Xử lý mã Java
+            String message = "Hello, Bro!";
+            out.print("<p>" + message + "</p>");
+        %>
+       
+        <a href="viewform">Den Trang Thong Tin</a>
+    </div>
+    <div class="footer">
+        <p>&copy; 2210900037 Le Hoang Long</p>
+    </div>
+</body>
+</html>

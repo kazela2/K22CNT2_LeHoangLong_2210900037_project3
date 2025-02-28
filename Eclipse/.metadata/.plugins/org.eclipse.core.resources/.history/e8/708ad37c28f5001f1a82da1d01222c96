@@ -1,0 +1,82 @@
+package com.webmvc.users;
+
+import java.math.BigDecimal;
+
+public class LHLSanPham {
+	private int lhl_masp;
+	private String lhl_tensp;
+	private String lhl_mota;
+	private BigDecimal lhl_gia;
+	private String lhl_hinhanh;
+	private LHLDanhMuc lhl_madm;
+	private LHLNhaCungCap lhl_mancc;
+	
+	
+	
+	public LHLSanPham(int lhl_masp, String lhl_tensp, String lhl_mota, BigDecimal lhl_gia, String lhl_hinhanh,
+			LHLDanhMuc lhl_madm, LHLNhaCungCap lhl_mancc) {
+		super();
+		this.lhl_masp = lhl_masp;
+		this.lhl_tensp = lhl_tensp;
+		this.lhl_mota = lhl_mota;
+		this.lhl_gia = lhl_gia;
+		this.lhl_hinhanh = lhl_hinhanh;
+		 this.lhl_madm = LHLDanhMucDAO.getDanhMucById(lhl_madm);  
+	        this.lhl_mancc = LHLNhaCungCapDAO.getNhaCungCapById(lhl_mancc); 
+	}
+	
+	public LHLSanPham() {
+		super();
+	}
+	
+	
+
+	public LHLDanhMuc getLhl_madm() {
+		return lhl_madm;
+	}
+
+	public void setLhl_madm(LHLDanhMuc lhl_madm) {
+		this.lhl_madm = lhl_madm;
+	}
+
+	public LHLNhaCungCap getLhl_mancc() {
+		return lhl_mancc;
+	}
+
+	public void setLhl_mancc(LHLNhaCungCap lhl_mancc) {
+		this.lhl_mancc = lhl_mancc;
+	}
+
+	//getter and setter
+	public int getLhl_masp() {
+		return lhl_masp;
+	}
+	public void setLhl_masp(int lhl_masp) {
+		this.lhl_masp = lhl_masp;
+	}
+	public String getLhl_tensp() {
+		return lhl_tensp;
+	}
+	public void setLhl_tensp(String lhl_tensp) {
+		this.lhl_tensp = lhl_tensp;
+	}
+	public String getLhl_mota() {
+		return lhl_mota;
+	}
+	public void setLhl_mota(String lhl_mota) {
+		this.lhl_mota = lhl_mota;
+	}
+	public BigDecimal  getLhl_gia() {
+		return lhl_gia;
+	}
+	public void setLhl_gia(BigDecimal lhl_gia) {
+		this.lhl_gia = lhl_gia;
+	}
+	public String getLhl_hinhanh() {
+		return lhl_hinhanh;
+	}
+	public void setLhl_hinhanh(String lhl_hinhanh) {
+		this.lhl_hinhanh = lhl_hinhanh;
+	}
+}
+

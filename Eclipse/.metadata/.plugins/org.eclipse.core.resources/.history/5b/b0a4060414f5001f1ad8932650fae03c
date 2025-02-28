@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>SuaBlog</h1>
+<form:form method="POST" action="/2210900037_LeHoangLong/luu"
+	modelAttribute="user">
+	<table>
+		<tr>
+			<td></td>
+			<td><form:hidden path="id" /></td>
+		</tr>
+		<tr>
+			<td>TieuDe :</td>
+			<td><form:input path="tieude" /></td>
+		</tr>
+		<tr>
+			<td>NgayTao :</td>
+			<td><form:input path="ngaytao" /></td>
+		</tr>
+		<tr>
+			<td>NoiDung :</td>
+			<td><form:input path="noidung" /></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><input type="submit" value="luu" /></td>
+		</tr>
+	</table>
+</form:form>
+</body>
+</html>

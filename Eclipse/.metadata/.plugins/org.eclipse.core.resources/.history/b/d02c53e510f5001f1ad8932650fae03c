@@ -1,0 +1,35 @@
+package com.webmvc.homecontrollers;
+
+import com.webmvc.dao.LHLSanPhamDao;
+
+@Controller
+public class LHLSanPhamServlet {
+	@Autowired
+	LHLSanPhamDao dao;
+
+	@RequestMapping("/viewform")
+	public String viewemp(Model m) {
+		List<LHLSanPham> list = dao.getEmployees();
+		m.addAttribute("list", list);
+		return "viewform";
+	}
+
+	@RequestMapping(value = "/sua/{id}")
+	public String edit(@PathVariable int id, Model m) {
+		Blog blog = dao.getEmpById(id);
+		m.addAttribute("user", blog);
+		return "editform";
+	}
+
+	@RequestMapping(value = "/luu", method = RequestMethod.POST)
+	public String luu(@ModelAttribute("user") Blog user) {
+		dao.update(user);
+		return "redirect:/viewform";
+	}
+
+	@RequestMapping(value = "/xoa/{id}", method = RequestMethod.GET)
+	public String delete(@PathVariable int id) {
+		dao.delete(id);
+		return "redirect:/viewform";
+	}
+}

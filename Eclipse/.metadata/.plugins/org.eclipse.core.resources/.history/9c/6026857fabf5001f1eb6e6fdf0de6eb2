@@ -1,0 +1,63 @@
+package com.webmvc.users;
+
+public class LHLNhaCungCap {
+	private int lhl_mancc;
+	private String lhl_tenncc;
+	private String lhl_diachi;
+	private String lhl_sdt;
+	private String lhl_email;
+
+	public LHLNhaCungCap(int lhl_mancc, String lhl_tenncc, String lhl_diachi, String lhl_sdt, String lhl_email) {
+		super();
+		this.lhl_mancc = lhl_mancc;
+		this.lhl_tenncc = lhl_tenncc;
+		this.lhl_diachi = lhl_diachi;
+		this.lhl_sdt = lhl_sdt;
+		this.lhl_email = lhl_email;
+	}
+
+	public LHLNhaCungCap() {
+		super();
+	}
+
+	public int getLhl_mancc() {
+		return lhl_mancc;
+	}
+
+	public void setLhl_mancc(int lhl_mancc) {
+		this.lhl_mancc = lhl_mancc;
+	}
+
+	public String getLhl_tenncc() {
+		return lhl_tenncc;
+	}
+
+	public void setLhl_tenncc(String lhl_tenncc) {
+		this.lhl_tenncc = lhl_tenncc;
+	}
+
+	public String getLhl_diachi() {
+		return lhl_diachi;
+	}
+
+	public void setLhl_diachi(String lhl_diachi) {
+		this.lhl_diachi = lhl_diachi;
+	}
+
+	public String getLhl_sdt() {
+		return lhl_sdt;
+	}
+
+	public void setLhl_sdt(String lhl_sdt) {
+		this.lhl_sdt = lhl_sdt;
+	}
+
+	public String getLhl_email() {
+		return lhl_email;
+	}
+
+	public void setLhl_email(String lhl_email) {
+		this.lhl_email = lhl_email;
+	}
+
+}

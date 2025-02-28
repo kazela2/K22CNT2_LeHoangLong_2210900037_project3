@@ -1,0 +1,26 @@
+package com.webmvc.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.webmvc.users.DatabaseConnection;
+import com.webmvc.users.LHLDanhMuc;
+
+public class LHLNhaCungCapDao {
+    public static LHLDanhMuc getDanhMucById(int maDanhMuc) {
+        LHLDanhMuc danhMuc = null;
+        String query = "SELECT * FROM danh_muc WHERE ma_danh_muc = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setInt(1, maDanhMuc);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                danhMuc = new LHLDanhMuc(rs.getInt("lhl_madm"), rs.getString("lhl_tendm"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return danhMuc;
+    }
+}

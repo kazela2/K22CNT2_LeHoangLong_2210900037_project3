@@ -1,0 +1,5 @@
+package com.webmvc.users;
+
+public class DatabaseConnection {
+
+}

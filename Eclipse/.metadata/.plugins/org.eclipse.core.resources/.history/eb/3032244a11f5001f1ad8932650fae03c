@@ -1,0 +1,44 @@
+package com.webmvc.dao;
+
+import java.util.List;
+
+import javax.swing.tree.RowMapper;
+
+public class LHLSanPhamDao {
+	JdbcTemplate template;
+
+	public void setTemplate(JdbcTemplate template) {
+		this.template = template;
+	}
+
+	public int update(LHLSanPham p) {
+		String sql = "update blog2210900037 set tieude2210900037='" + p.getTieude() + "', ngaytao2210900037='"
+				+ p.getNgaytao() + "', noidung2210900037='" + p.getNoidung() + "' where id2210900037=" + p.getId();
+		return template.update(sql);
+	}
+
+	public int delete(int id) {
+		String sql = "delete from blog2210900037 where id2210900037=" + id + "";
+		return template.update(sql);
+	}
+
+	public LHLSanPham getEmpById(int id) {
+		String sql = "select * from blog2210900037 where id2210900037=?";
+	    Blog blog = template.queryForObject(sql, new Object[] { id }, new BeanPropertyRowMapper<Blog>(Blog.class));
+	    System.out.println(blog); 
+	    return blog;
+	}
+
+	public List<LHLSanPham> getEmployees() {
+		return template.query("select * from blog2210900037", new RowMapper<LHLSanPham>() {
+			public LHLSanPham mapRow(ResultSet rs, int row) throws SQLException {
+				LHLSanPham e = new LHLSanPham();
+				e.setId(rs.getInt(1));
+				e.setTieude(rs.getString(2));
+				e.setNgaytao(rs.getString(3));
+				e.setNoidung(rs.getString(4));
+				return e;
+			}
+		});
+	}
+}

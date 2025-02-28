@@ -1,0 +1,10 @@
+package com.webmvc.users;
+
+public class LHLSanPham {
+	private int lhl_masp;
+	private String lhl_tensp;
+	private String lhl_mota;
+	private int lhl_gia;
+	private String lhl_hinhanh;
+}
+

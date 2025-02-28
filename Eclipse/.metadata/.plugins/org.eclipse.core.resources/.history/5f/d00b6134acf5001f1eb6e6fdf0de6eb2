@@ -1,0 +1,35 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<body>
+    <h1>Danh Sach San Pham</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Ten San Pham</th>
+            <th>Gia</th>
+            <th>Mo Ta</th>
+            <th>Hinh Anh</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <c:forEach var="user" items="${listSanPham}">
+            <tr>
+                <td>${user.lhl_masp}</td>
+                <td>${user.lhl_tensp}</td>
+                <td>${user.lhl_gia}</td>
+                <td>${user.lhl_mota}</td>
+                <td>
+                    <c:if test="${not empty user.lhl_hinhanh}">y
+                        <img src="/images/${user.lhl_hinhanh}" width="80" height="80"/>
+                    </c:if>
+                </td>
+                <td><a href="sua/${user.lhl_masp}">Edit</a></td>
+                <td><a href="xoa/${user.lhl_masp}" onclick="return confirm('Ban co chac chan muon xoa san pham nay?')">Delete</a></td>
+            </tr>
+        </c:forEach>
+    </table>
+    <br />
+    <a href="index.jsp">Quay Lai</a>
+    <a href="addsanpham">Them Moi</a>
+</body>

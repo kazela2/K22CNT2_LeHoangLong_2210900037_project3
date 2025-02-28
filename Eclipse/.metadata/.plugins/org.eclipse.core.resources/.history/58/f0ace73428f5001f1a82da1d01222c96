@@ -1,0 +1,27 @@
+package com.webmvc.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.webmvc.users.DatabaseConnection;
+import com.webmvc.users.LHLNhaCungCap;
+
+public class LHLNhaCungCapDao {
+    public static LHLNhaCungCap getNhaCungCapById(int maNCC) {
+    	LHLNhaCungCap nhaCungCap = null;
+        String query = "SELECT * FROM lhl_nhacungcap WHERE lhl_mancc = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setInt(1, maNCC);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                nhaCungCap = new LHLNhaCungCap(rs.getInt("lhl_mancc"), rs.getString("lhl_tenncc"), rs.getString("lhl_diachi"),
+                		rs.getString("lhl_sdt"), rs.getString("lhl_email"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return nhaCungCap;
+    }
+}

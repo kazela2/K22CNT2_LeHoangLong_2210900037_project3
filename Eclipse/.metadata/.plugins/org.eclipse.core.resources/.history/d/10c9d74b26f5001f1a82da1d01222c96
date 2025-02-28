@@ -1,0 +1,7 @@
+package com.webmvc.users;
+
+public class LHLDanhMuc {
+	private int lhl_madm;
+	private String lhl_tendm;
+	private String lhl_mota;
+}

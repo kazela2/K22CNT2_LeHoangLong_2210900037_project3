@@ -1,0 +1,25 @@
+1740662222372	Delete element
+1740662423637	Rename type 'DienNuoc'
+1740662437250	Rename type 'DienNuocServlet'
+1740662451499	Rename type 'DienNuocDao'
+1740662650989	Rename type 'SanPham'
+1740662659161	Rename type 'SanPhamServlet'
+1740662669093	Rename type 'SanPhamDao'
+1740665514203	Rename resource 'viewform.jsp'
+1740666639152	Rename resource 'addform.jsp'
+1740666644625	Rename resource 'editform.jsp'
+1740726959811	Move 'addsanpham.jsp' to 'Sanpham'
+1740726962599	Move 'editsanpham.jsp' to 'Sanpham'
+1740726965321	Move 'viewsanpham.jsp' to 'Sanpham'
+1740729498392	Delete element
+1740730222324	Delete element
+1740730226274	Delete element
+1740730239948	Delete element
+1740730243577	Delete element
+1740730510055	Move 'addsanpham.jsp' to 'views'
+1740730511619	Move 'editsanpham.jsp' to 'views'
+1740730512620	Move 'viewsanpham.jsp' to 'views'
+1740730515540	Delete element
+1740730636438	Rename resource 'viewdanhmuc.jsp'
+1740730645460	Rename resource 'editdanhmuc.jsp'
+1740730651086	Rename resource 'adddanhmuc.jsp'

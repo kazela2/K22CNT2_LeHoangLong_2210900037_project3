@@ -1,0 +1,31 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<body>
+<h1>SuaBlog</h1>
+<form:form method="POST" action="/2210900037_LeHoangLong/luu"
+	modelAttribute="user">
+	<table>
+		<tr>
+			<td></td>
+			<td><form:hidden path="id" /></td>
+		</tr>
+		<tr>
+			<td>TieuDe :</td>
+			<td><form:input path="tieude" /></td>
+		</tr>
+		<tr>
+			<td>NgayTao :</td>
+			<td><form:input path="ngaytao" /></td>
+		</tr>
+		<tr>
+			<td>NoiDung :</td>
+			<td><form:input path="noidung" /></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><input type="submit" value="luu" /></td>
+		</tr>
+	</table>
+</form:form>
+</body>

@@ -1,0 +1,43 @@
+package com.webmvc.users;
+
+public class LHLNhaCungCap {
+	private int lhl_mancc;
+	private String lhl_tenncc;
+	private String lhl_diachi;
+	private String lhl_sdt;
+	private String lhl_email;
+	
+	
+	public int getLhl_mancc() {
+		return lhl_mancc;
+	}
+	public void setLhl_mancc(int lhl_mancc) {
+		this.lhl_mancc = lhl_mancc;
+	}
+	public String getLhl_tenncc() {
+		return lhl_tenncc;
+	}
+	public void setLhl_tenncc(String lhl_tenncc) {
+		this.lhl_tenncc = lhl_tenncc;
+	}
+	public String getLhl_tenncc() {
+		return lhl_tenncc;
+	}
+	public void setLhl_tenncc(String lhl_tenncc) {
+		this.lhl_tenncc = lhl_tenncc;
+	}
+	public String getLhl_sdt() {
+		return lhl_sdt;
+	}
+	public void setLhl_sdt(String lhl_sdt) {
+		this.lhl_sdt = lhl_sdt;
+	}
+	public String getLhl_email() {
+		return lhl_email;
+	}
+	public void setLhl_email(String lhl_email) {
+		this.lhl_email = lhl_email;
+	}
+	
+	
+}
