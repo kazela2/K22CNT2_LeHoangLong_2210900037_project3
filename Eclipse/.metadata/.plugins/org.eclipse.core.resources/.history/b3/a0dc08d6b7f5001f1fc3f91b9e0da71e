@@ -1,0 +1,55 @@
+package com.webmvc.homecontrollers;
+
+import java.util.List;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.webmvc.dao.LHLKhachHangDao;
+import com.webmvc.users.LHLKhachHang;
+import com.webmvc.users.LHLSanPham;
+
+public class LHLKhachHangServlet {
+	LHLKhachHangDao spdao;
+
+	@RequestMapping("/viewkhachhang")
+	public String viewemp(Model m) {
+		List<LHLKhachHang> list = spdao.getEmployees();
+		m.addAttribute("list", list);
+		return "viewkhachhang";
+	}
+
+	@RequestMapping(value = "/sua/{id}")
+	public String edit(@PathVariable int id, Model m) {
+		LHLSanPham sanpham = spdao.getEmpById(id);
+		m.addAttribute("user", sanpham);
+		return "editkhachhang";
+	}
+
+//	@RequestMapping(value = "/luu", method = RequestMethod.POST)
+//	public String luu(@ModelAttribute("user") LHLSanPham user) {
+//		spdao.update(user);
+//		return "redirect:/viewsanpham";
+//	}
+
+	@RequestMapping(value = "/xoa/{id}", method = RequestMethod.GET)
+	public String delete(@PathVariable int id) {
+		spdao.delete(id);
+		return "redirect:/viewsanpham";
+	}
+
+	@RequestMapping(value = "/them", method = RequestMethod.GET)
+	public String luu(Model m) {
+		m.addAttribute("user", new LHLSanPham());
+		return "addsanpham";
+	}
+
+	@RequestMapping(value = "/them", method = RequestMethod.POST)
+	public String addNewProduct(@ModelAttribute("user") LHLSanPham user) {
+		spdao.update(user);
+		return "redirect:/viewsanpham";
+	}
+}

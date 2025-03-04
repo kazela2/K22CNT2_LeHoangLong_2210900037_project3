@@ -8,7 +8,6 @@ public class LHLSanPham {
 	private String lhl_danhmuc;
 	private String lhl_mota;
 	private BigDecimal lhl_gia;
-	private String lhl_hinhanh;
 
 
 
@@ -21,7 +20,6 @@ public class LHLSanPham {
 		this.lhl_danhmuc = lhl_danhmuc;
 		this.lhl_mota = lhl_mota;
 		this.lhl_gia = lhl_gia;
-		this.lhl_hinhanh = lhl_hinhanh;
 	}
 	
 	public LHLSanPham() {
@@ -68,13 +66,5 @@ public class LHLSanPham {
 
 	public void setLhl_gia(BigDecimal lhl_gia) {
 		this.lhl_gia = lhl_gia;
-	}
-
-	public String getLhl_hinhanh() {
-		return lhl_hinhanh;
-	}
-
-	public void setLhl_hinhanh(String lhl_hinhanh) {
-		this.lhl_hinhanh = lhl_hinhanh;
 	}
 }

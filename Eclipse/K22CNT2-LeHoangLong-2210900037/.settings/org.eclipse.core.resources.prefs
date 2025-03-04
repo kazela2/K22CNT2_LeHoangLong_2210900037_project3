@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/views/addsanpham.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/editsanpham.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/viewsanpham.jsp=UTF-8
 encoding//src/main/webapp/index.jsp=UTF-8

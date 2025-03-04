@@ -60,20 +60,16 @@ a:hover {
 		<th>Ten San Pham</th>
 		<th>Gia</th>
 		<th>Mo Ta</th>
-		<th>Hinh Anh</th>
 		<th>Danh Muc</th>
 		<th>Edit</th>
 		<th>Delete</th>
 	</tr>
-	<c:forEach var="user" items="${listSanPham}">
+	<c:forEach var="user" items="${list}">
 		<tr>
 			<td>${user.lhl_masp}</td>
 			<td>${user.lhl_tensp}</td>
 			<td>${user.lhl_gia}</td>
 			<td>${user.lhl_mota}</td>
-			<td><c:if test="${not empty user.lhl_hinhanh}">
-					<img src="/images/${user.lhl_hinhanh}" width="80" height="80" />
-				</c:if></td>
 			<td>${user.lhl_danhmuc}</td>
 			<td><a href="sua/${user.lhl_masp}">Edit</a></td>
 			<td><a href="xoa/${user.lhl_masp}"
@@ -83,5 +79,6 @@ a:hover {
 </table>
 <br />
 <a href="index.jsp">Quay Lai</a>
-<a href="addsanpham">Them Moi</a>
+<a href="them">Them Moi</a>
+
 

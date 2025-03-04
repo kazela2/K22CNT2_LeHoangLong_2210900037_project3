@@ -1,0 +1,75 @@
+package com.webmvc.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import com.webmvc.users.LHLKhachHang;
+
+@Repository
+public class LHLKhachHangDao {
+	JdbcTemplate template;
+
+    // Setter for JdbcTemplate
+    public void setTemplate(JdbcTemplate template) {
+        this.template = template;
+    }
+
+    // Update method for updating customer information
+    public int update(LHLKhachHang khachHang) {
+        String sql = "UPDATE lhl_khachhang SET "
+                + "lhl_hoten = ?, "
+                + "lhl_email = ?, "
+                + "lhl_sodienthoai = ?, "
+                + "lhl_tendangnhap = ?, "
+                + "lhl_matkhau = ?, "
+                + "lhl_quyen = ? "
+                + "WHERE lhl_makh = ?";
+
+        return template.update(sql, 
+                khachHang.getLhl_hoten(), 
+                khachHang.getLhl_email(),
+                khachHang.getLhl_sodienthoai(), 
+                khachHang.getLhl_tendangnhap(),
+                khachHang.getLhl_matkhau(), 
+                khachHang.getLhl_quyen(), 
+                khachHang.getLhl_makh());
+    }
+
+    // Delete method for deleting a customer by ID
+    public int delete(int id) {
+        String sql = "DELETE FROM lhl_khachhang WHERE lhl_makh = ?";
+        return template.update(sql, id);
+    }
+
+    // Method to get a customer by ID
+    public LHLKhachHang getEmpById(int id) {
+        String sql = "SELECT * FROM lhl_khachhang WHERE lhl_makh = ?";
+        LHLKhachHang khachHang = template.queryForObject(sql, new Object[] { id },
+                new BeanPropertyRowMapper<LHLKhachHang>(LHLKhachHang.class));
+        System.out.println(khachHang);
+        return khachHang;
+    }
+
+    // Method to get a list of all customers
+    public List<LHLKhachHang> getEmployees() {
+        return template.query("SELECT * FROM lhl_khachhang", new RowMapper<LHLKhachHang>() {
+            public LHLKhachHang mapRow(ResultSet rs, int row) throws SQLException {
+                LHLKhachHang khachHang = new LHLKhachHang();
+                khachHang.setLhl_makh(rs.getInt("lhl_makh"));
+                khachHang.setLhl_hoten(rs.getString("lhl_hoten"));
+                khachHang.setLhl_email(rs.getString("lhl_email"));
+                khachHang.setLhl_sodienthoai(rs.getString("lhl_sodienthoai"));
+                khachHang.setLhl_tendangnhap(rs.getString("lhl_tendangnhap"));
+                khachHang.setLhl_matkhau(rs.getString("lhl_matkhau"));
+                khachHang.setLhl_quyen(rs.getString("lhl_quyen"));
+                return khachHang;
+            }
+        });
+    }
+}
